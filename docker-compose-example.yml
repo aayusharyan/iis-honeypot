@@ -1,0 +1,22 @@
+# docker-compose-example.yml
+#
+# Example deployment configuration for iis-honeypot.
+# Copy this file to docker-compose.yml and adjust as needed:
+#
+#   cp docker-compose-example.yml docker-compose.yml
+#
+# See README.md for full usage instructions.
+
+services:
+  iis-honeypot:
+    build:
+      context: .                 # Build image from the local Dockerfile
+    image: iis-honeypot:latest
+    container_name: iis-honeypot
+    restart: unless-stopped
+    ports:
+      - "8080:80"                # Host port 8080 → container port 80; change the left side to suit your setup
+    environment:
+      - TZ=UTC                   # Timezone for log timestamps; e.g. America/New_York
+    security_opt:
+      - no-new-privileges:true   # Prevent privilege escalation inside the container
