@@ -1,4 +1,4 @@
-# iis-honeypot
+# fake-iis
 
 A lightweight Docker honeypot that mimics Microsoft IIS 8.0 using OpenResty/nginx. Designed to attract and observe automated scanners and bots probing for Windows web server vulnerabilities.
 
@@ -29,11 +29,11 @@ Pull the pre-built image directly from the GitHub Container Registry:
 
 ```bash
 docker run -d \
-  --name iis-honeypot \
+  --name fake-iis \
   --restart unless-stopped \
   --security-opt no-new-privileges:true \
   -p 8080:80 \
-  ghcr.io/aayusharyan/iis-honeypot:latest
+  ghcr.io/aayusharyan/fake-iis:latest
 ```
 
 Replace `8080` with whichever host port you want to expose.

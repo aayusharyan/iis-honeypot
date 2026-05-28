@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Aayush Sinha
 #
-# IIS Honeypot - Docker image
+# fake-iis - Docker image
 #
 # Builds a lightweight OpenResty (nginx + LuaJIT) container that mimics a
 # Microsoft IIS 8.0 server. The image serves static decoy pages and spoofs
@@ -10,8 +10,8 @@
 # web server.
 #
 # Usage:
-#   docker build -t iis-honeypot .
-#   docker run -p 80:80 iis-honeypot
+#   docker build -t fake-iis .
+#   docker run -p 80:80 fake-iis
 
 # ── Base image ────────────────────────────────────────────────────────────────
 # openresty/openresty:alpine provides nginx with the ngx_headers_more module,
@@ -37,7 +37,7 @@ COPY src/  /var/www/html/
 #   • Returns 404 for well-known IIS/Windows administrative paths
 #   • Serves the decoy error pages for 400/403/404/500 responses
 #   • Suppresses access and error logs to avoid disk I/O on the host
-COPY nginx.conf /etc/nginx/conf.d/iis-honeypot.conf
+COPY nginx.conf /etc/nginx/conf.d/fake-iis.conf
 
 # ── Network ───────────────────────────────────────────────────────────────────
 # Expose the standard HTTP port.  Map to a host port at runtime with -p.
