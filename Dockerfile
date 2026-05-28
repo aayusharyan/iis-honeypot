@@ -3,11 +3,9 @@
 #
 # fake-iis - Docker image
 #
-# Builds a lightweight OpenResty (nginx + LuaJIT) container that mimics a
-# Microsoft IIS 8.0 server. The image serves static decoy pages and spoofs
-# IIS-specific HTTP response headers so that automated scanners and
-# opportunistic attackers believe they are interacting with a real Windows
-# web server.
+# Builds a lightweight OpenResty (nginx + LuaJIT) container that serves a
+# fake Microsoft IIS 8.0 website. The image serves static IIS-styled pages
+# and sets IIS-specific HTTP response headers.
 #
 # Usage:
 #   docker build -t fake-iis .
@@ -35,7 +33,7 @@ COPY src/  /var/www/html/
 # nginx virtual-host configuration that:
 #   • Spoofs IIS 8.0 Server and ASP.NET response headers
 #   • Returns 404 for well-known IIS/Windows administrative paths
-#   • Serves the decoy error pages for 400/403/404/500 responses
+#   • Serves the IIS-styled error pages for 400/403/404/500 responses
 #   • Suppresses access and error logs to avoid disk I/O on the host
 COPY nginx.conf /etc/nginx/conf.d/fake-iis.conf
 

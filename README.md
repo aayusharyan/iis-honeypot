@@ -1,14 +1,14 @@
 # fake-iis
 
-A lightweight Docker honeypot that mimics Microsoft IIS 8.0 using OpenResty/nginx. Designed to attract and observe automated scanners and bots probing for Windows web server vulnerabilities.
+A lightweight Docker image that serves a fake Microsoft IIS 8.0 website using OpenResty/nginx.
 
 ## How it works
 
 - Serves a pixel-perfect replica of the IIS 8.0 default splash page
 - Spoofs HTTP response headers (`Server: Microsoft-IIS/8.0`, `X-Powered-By: ASP.NET`, `X-AspNet-Version: 4.0.30319`)
-- Exposes a `web.config` endpoint - a classic IIS artifact that scanners probe for.
+- Exposes a `web.config` endpoint with the correct XML content-type
 - Returns authentic IIS-styled 403, 404, and 500 error pages
-- Silently drops all access and error logs (no noise) - Use your own IDS.
+- Silently drops all access and error logs
 
 ## Usage
 
