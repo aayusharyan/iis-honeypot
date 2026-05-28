@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Aayush Sinha
 #
-# IIS Honeypot — Docker image
+# IIS Honeypot - Docker image
 #
 # Builds a lightweight OpenResty (nginx + LuaJIT) container that mimics a
 # Microsoft IIS 8.0 server. The image serves static decoy pages and spoofs
