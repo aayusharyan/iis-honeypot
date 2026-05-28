@@ -1,4 +1,4 @@
-# iis-honeypot .gitignore
+# fake-iis .gitignore
 
 # Local compose file - copy docker-compose-example.yml to docker-compose.yml
 # and customise ports/settings for your environment. The local copy is ignored

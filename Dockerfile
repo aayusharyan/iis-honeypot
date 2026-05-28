@@ -24,7 +24,7 @@ LABEL version="1.1.0"
 
 # ── Remove the default site configuration ────────────────────────────────────
 # OpenResty ships with a catch-all default.conf that would conflict with the
-# honeypot vhost configuration copied in below.
+# fake-iis vhost configuration copied in below.
 RUN rm -f /etc/nginx/conf.d/default.conf
 
 # ── Copy application assets ───────────────────────────────────────────────────
