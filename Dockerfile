@@ -20,7 +20,7 @@
 FROM openresty/openresty:alpine
 
 # ── Image metadata ────────────────────────────────────────────────────────────
-LABEL version="1.0.0"
+LABEL version="1.1.0"
 
 # ── Remove the default site configuration ────────────────────────────────────
 # OpenResty ships with a catch-all default.conf that would conflict with the
